@@ -1,0 +1,24 @@
+{
+  "name": "azureresoucealerter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "format": "prettier ./ --write",
+    "prebuild": "rm -rf dist",
+    "build": "esbuild index.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/index.js",
+    "postbuild": "cd dist && zip -r index.zip index.js*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.145",
+    "esbuild": "^0.23.1",
+    "prettier": "^3.3.3"
+  },
+  "dependencies": {
+    "@danny270793/azureservicesclient": "^1.0.8",
+    "axios": "^1.7.7"
+  }
+}
